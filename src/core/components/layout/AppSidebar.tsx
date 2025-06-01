@@ -32,26 +32,24 @@ const navItems: NavItem[] = [
   {
     icon: <GridIcon />,
     name: "Dashboard",
-    subItems: [{ name: "Ecommerce", path: "/", pro: false }],
   },
-  { icon: <CalenderIcon />, name: "Calendar", path: "/calendar" },
   { icon: <UserCircleIcon />, name: "User Profile", path: "/profile" },
   {
     icon: <ListIcon />,
-    name: "Forms",
-    subItems: [{ name: "Form Elements", path: "/main/user", pro: false }],
+    name: "Booking Management",
+    subItems: [
+      { name: "Appointments & Schedules", path: "/main/user", pro: false },
+      { name: "Change/Cancellation Requests", path: "/main/user1", pro: false },
+      { name: "Blocked Dates Management", path: "/main/user2", pro: false },
+    ],
   },
   {
     icon: <TableIcon />,
-    name: "Tables",
-    subItems: [{ name: "Basic Tables", path: "/basic-tables", pro: false }],
-  },
-  {
-    icon: <PageIcon />,
-    name: "Pages",
+    name: "Service Management",
     subItems: [
-      { name: "Blank Page", path: "/blank", pro: false },
-      { name: "404 Error", path: "/error-404", pro: false },
+      { name: "Service Configuration", path: "/basic-tables", pro: false },
+      { name: "Add-ons & Conditions", path: "/basic-tables2", pro: false },
+      { name: "Service Statuses & Transitions", path: "/basic-tables3", pro: false },
     ],
   },
 ];
@@ -163,7 +161,7 @@ const AppSidebar: React.FC = () => {
                   <>
                     <span className="menu-item-text">{nav.name}</span>
                     <span className={`ml-auto w-5 h-5 transition-transform duration-200 ${isOpen ? "rotate-180 text-brand-500" : ""}`}>
-                      <ChevronDownIcon />
+                      <ChevronDownIcon/>
                     </span>
                   </>
                 )}
@@ -208,8 +206,8 @@ const AppSidebar: React.FC = () => {
                       <Link
                         href={subItem.path}
                         className={`menu-dropdown-item ${isActive(subItem.path)
-                            ? "menu-dropdown-item-active"
-                            : "menu-dropdown-item-inactive"
+                          ? "menu-dropdown-item-active"
+                          : "menu-dropdown-item-inactive"
                           }`}
                       >
                         {subItem.name}
@@ -217,8 +215,8 @@ const AppSidebar: React.FC = () => {
                           {subItem.new && (
                             <span
                               className={`menu-dropdown-badge ${isActive(subItem.path)
-                                  ? "menu-dropdown-badge-active"
-                                  : "menu-dropdown-badge-inactive"
+                                ? "menu-dropdown-badge-active"
+                                : "menu-dropdown-badge-inactive"
                                 }`}
                             >
                               new
@@ -227,8 +225,8 @@ const AppSidebar: React.FC = () => {
                           {subItem.pro && (
                             <span
                               className={`menu-dropdown-badge ${isActive(subItem.path)
-                                  ? "menu-dropdown-badge-active"
-                                  : "menu-dropdown-badge-inactive"
+                                ? "menu-dropdown-badge-active"
+                                : "menu-dropdown-badge-inactive"
                                 }`}
                             >
                               pro
