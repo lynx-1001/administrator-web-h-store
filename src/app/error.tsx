@@ -1,3 +1,4 @@
+"use client";
 import GridShape from "@/core/components/common/error/GridShape";
 import { Metadata } from "next";
 import Image from "next/image";
